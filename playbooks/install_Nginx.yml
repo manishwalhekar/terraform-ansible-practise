@@ -1,0 +1,20 @@
+-
+  name: Install Nginx
+  become: yes
+  hosts: my_servers
+
+  tasks:
+    - name: Install Nginx
+      package: 
+        name: nginx
+        state: latest
+
+    - name: Start Nginx
+      service: 
+        name: nginx
+        state: started
+
+    - name: Enable Nginx
+      service:
+        name: nginx
+        enabled: yes
